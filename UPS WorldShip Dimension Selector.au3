@@ -1,10 +1,12 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Icon=..\..\Pictures\isp_icon.ico
-#AutoIt3Wrapper_Res_Comment=Will Enterprises, Inc
+#AutoIt3Wrapper_Icon=upswsds.ico
+#AutoIt3Wrapper_UseUpx=y
+#AutoIt3Wrapper_Res_Comment=Will Enterprises, Inc (C) 2015
 #AutoIt3Wrapper_Res_Description=UPS WorldShip Dimension Selector
-#AutoIt3Wrapper_Res_Fileversion=1.7.0.16
+#AutoIt3Wrapper_Res_Fileversion=1.7.19.12
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
-#AutoIt3Wrapper_Res_LegalCopyright=2015 (C) Nathaniel A. Malinowski
+#AutoIt3Wrapper_Res_ProductVersion=1.7
+#AutoIt3Wrapper_Res_LegalCopyright=Nathaniel A. Malinowski (C) 2015
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Add_Constants=n
 #AutoIt3Wrapper_Run_Tidy=y
@@ -23,7 +25,7 @@
 #include <StaticConstants.au3>
 #include <WindowsConstants.au3>
 ;GUI
-Local $UPWSPS = GUICreate("UPS WorldShip Package Selector", 396, 259, 192, 124)
+Local $UPWSPS = GUICreate("UPS WorldShip Dimension Selector", 396, 259, 192, 124)
 Local $Hotkeys = GUICtrlCreateGroup("Hotkeys", 9, 9, 377, 241)
 Local $About = GUICtrlCreateButton("About", 304, 216, 75, 25)
 Local $Numpad1 = GUICtrlCreateLabel("Numpad 1: Small Package", 25, 33, 130, 17)
@@ -61,8 +63,8 @@ Func _myAbout($iParent = 0)
 	Local $AboutBox = GUICreate("About", 334, 239, 509, 471)
 	Local $GroupBox1 = GUICtrlCreateGroup("", 8, 8, 305, 185)
 	Local $Image1 = GUICtrlCreatePic("C:\Users\Nathaniel\Pictures\WILLLOGO (2).bmp", 16, 24, 105, 97)
-	Local $Label1 = GUICtrlCreateLabel("UPS WorldShip Package Selector", 136, 24, 166, 17)
-	Local $Label2 = GUICtrlCreateLabel("1.7.0.16", 136, 48, 37, 17)
+	Local $Label1 = GUICtrlCreateLabel("UPS WorldShip Dimension Selector", 136, 24, 170, 17)
+	Local $Label2 = GUICtrlCreateLabel("1.7.19.11", 136, 48, 40, 17)
 	Local $Label4 = GUICtrlCreateLabel("UPS WorldShip® is a trademark of United Parcel Service of America, Inc ", 16, 160, 249, 14)
 	GUICtrlSetFont(-1, 6, 400, 0, "Arial")
 	Local $Label3 = GUICtrlCreateLabel("Nathaniel A. Malinowski (C) 2015", 16, 136, 160, 17)
@@ -107,6 +109,7 @@ EndFunc   ;==>_Start
 
 ; Process other hotkeys
 Func _Process()
+	FileCreateShortcut(@AutoItExe, @StartupDir & "\UPS WorldShip Dimension Selector.ink")
 	If $Hotkey Then
 		Switch @HotKeyPressed
 			Case "{NUMPAD1}" ;When NUMPAD1 is pressed, make WorldShip window "Active", Select Preset Package Container, Press "L", Select Weight Box.
@@ -172,4 +175,3 @@ Func _Process()
 		EndSwitch
 	EndIf
 EndFunc   ;==>_Process
-
