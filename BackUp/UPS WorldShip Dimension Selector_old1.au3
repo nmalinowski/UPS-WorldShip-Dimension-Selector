@@ -3,7 +3,7 @@
 #AutoIt3Wrapper_UseUpx=y
 #AutoIt3Wrapper_Res_Comment=Will Enterprises, Inc (C) 2015
 #AutoIt3Wrapper_Res_Description=UPS WorldShip Dimension Selector
-#AutoIt3Wrapper_Res_Fileversion=1.7.19.27
+#AutoIt3Wrapper_Res_Fileversion=1.7.19.23
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_ProductVersion=1.7
 #AutoIt3Wrapper_Res_LegalCopyright=Nathaniel A. Malinowski (C) 2015
@@ -45,8 +45,6 @@ HotKeySet("{NumPad2}", "_Process") ;Change {NUMPAD#} to any key described here: 
 HotKeySet("{NumPad3}", "_Process")
 HotKeySet("{NumPad4}", "_Process")
 HotKeySet("{NumPad5}", "_Process")
-HotKeySet("{NumPad7}", "_Process")
-HotKeySet("{NumPad8}", "_Process")
 HotKeySet("{ESC}", "_Exit") ; Hotkey to end the script
 Local $nMsg
 While 1
@@ -68,7 +66,7 @@ Func _myAbout($iParent = 0)
 	Local $GroupBox1 = GUICtrlCreateGroup("", 8, 8, 305, 185)
 	Local $Image1 = GUICtrlCreatePic("logo.bmp", 16, 24, 105, 97)
 	Local $Label1 = GUICtrlCreateLabel("UPS WorldShip Dimension Selector", 136, 24, 170, 17)
-	Local $Label2 = GUICtrlCreateLabel("1.7.19.26", 136, 48, 55, 17)
+	Local $Label2 = GUICtrlCreateLabel("1.7.19.23", 136, 48, 55, 17)
 	Local $Label4 = GUICtrlCreateLabel("UPS WorldShip® is a trademark of United Parcel Service of America, Inc ", 16, 160, 249, 14)
 	GUICtrlSetFont(-1, 6, 400, 0, "Arial")
 	Local $Label3 = GUICtrlCreateLabel("Nathaniel A. Malinowski (C) 2015", 16, 136, 160, 17)
@@ -103,6 +101,22 @@ EndFunc   ;==>_Exit
 Func _Start()
 	$Hotkey = Not $Hotkey
 	If $Hotkey Then
+		$VKey = 0x90
+
+$sState = _WinAPI_GetKeyState($VKey)
+Send("{NUMLOCK on}")
+Sleep(2000)
+If $sState Then Send("{NUMLOCK off}")
+
+Func _WinAPI_GetKeyState($vkCode)
+
+	Local $Ret = DllCall('user32.dll', 'int', 'GetKeyState', 'int', $vkCode)
+
+	If @error Then
+		Return SetError(1, 0, 0)
+	EndIf
+	Return $Ret[0]
+EndFunc   ;==>_WinAPI_GetKeyState
 		ToolTip("Script started!")
 		WinActivate("UPS WorldShip", "Move to first record") ;Bring WorldShip to the front.
 		Local $hWnd = WinGetHandle("UPS WorldShip", "")
