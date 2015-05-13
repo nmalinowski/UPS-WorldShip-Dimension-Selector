@@ -1,14 +1,15 @@
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
 #AutoIt3Wrapper_Icon=upswsds.ico
 #AutoIt3Wrapper_UseUpx=y
+#AutoIt3Wrapper_Compile_Both=y
+#AutoIt3Wrapper_UseX64=y
 #AutoIt3Wrapper_Res_Comment=Will Enterprises, Inc (C) 2015
 #AutoIt3Wrapper_Res_Description=UPS WorldShip Dimension Selector
-#AutoIt3Wrapper_Res_Fileversion=1.7.19.29
+#AutoIt3Wrapper_Res_Fileversion=1.7.19.60
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_ProductVersion=1.7
 #AutoIt3Wrapper_Res_LegalCopyright=Nathaniel A. Malinowski (C) 2015
 #AutoIt3Wrapper_Res_Language=1033
-#AutoIt3Wrapper_Add_Constants=n
 #AutoIt3Wrapper_Run_Tidy=y
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #cs -------------------------------------------------------------------------------------------
@@ -74,7 +75,7 @@ Func _myAbout($iParent = 0)
 	Local $GroupBox1 = GUICtrlCreateGroup("", 8, 8, 305, 185)
 	Local $Image1 = GUICtrlCreatePic("logo.bmp", 16, 24, 105, 97)
 	Local $Label1 = GUICtrlCreateLabel("UPS WorldShip Dimension Selector", 136, 24, 170, 17)
-	Local $Label2 = GUICtrlCreateLabel("1.7.19.28", 136, 48, 55, 17)
+	Local $Label2 = GUICtrlCreateLabel("1.7.19.59", 136, 48, 55, 17)
 	Local $Label4 = GUICtrlCreateLabel("UPS WorldShip® is a trademark of United Parcel Service of America, Inc ", 16, 160, 249, 14)
 	GUICtrlSetFont(-1, 6, 400, 0, "Arial")
 	Local $Label3 = GUICtrlCreateLabel("Nathaniel A. Malinowski (C) 2015", 16, 136, 160, 17)
@@ -83,7 +84,6 @@ Func _myAbout($iParent = 0)
 	GUICtrlCreateGroup("", -99, -99, 1, 1)
 	Local $Button1 = GUICtrlCreateButton("&OK", 124, 208, 75, 25, 0)
 	GUISetState(@SW_SHOW)
-
 
 	While 1
 		$nMsg = GUIGetMsg()
@@ -104,7 +104,6 @@ Func _Exit()
 	ToolTip("")
 	Exit
 EndFunc   ;==>_Exit
-
 ; Start and stop accepting other hot keys
 Func _Start()
 	$Hotkey = Not $Hotkey
@@ -129,11 +128,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]") ;Select Preset Package Container
 				Sleep(100)
 				Send("s") ;Presses "L" so we can select the Large Jerzees Package.
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}") ;Press ENTER.
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]") ;Select Weight Box.
-				Sleep(100)
+				Sleep(200)
 				Send("15") ;Enter Small Package Weight in Weight Box.
 				ToolTip("Fruit of the Loom - Youth")
 				#cs ------------------------------------------------------------------------------------------
@@ -145,11 +144,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("m")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("31")
 				ToolTip("Fruit of the Loom - Small/Medium")
 			Case "{NUMPAD3}"
@@ -158,11 +157,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("l")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("35")
 				ToolTip("Fruit of the Loom - L-3XL")
 			Case "{NUMPAD4}"
@@ -171,11 +170,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("1")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("15")
 				ToolTip("Gildan Small")
 			Case "{NUMPAD5}"
@@ -184,11 +183,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("2")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("31")
 				ToolTip("Gildan Large.")
 			Case "{NUMPAD7}"
@@ -197,11 +196,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("h")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("31")
 				ToolTip("Hanes")
 			Case "{NUMPAD8}"
@@ -210,11 +209,11 @@ Func _Process()
 				ControlClick($hWnd, "", "[CLASS:ComboBox; INSTANCE:20]")
 				Sleep(100)
 				Send("d")
-				Sleep(100)
+				Sleep(500)
 				Send("{ENTER}")
-				Sleep(100)
+				Sleep(200)
 				ControlClick($hWnd, "", "[CLASS:Edit; INSTANCE:32]")
-				Sleep(100)
+				Sleep(200)
 				Send("15")
 				ToolTip("Duotec")
 			Case Else
@@ -222,3 +221,4 @@ Func _Process()
 		EndSwitch
 	EndIf
 EndFunc   ;==>_Process
+
