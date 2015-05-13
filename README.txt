@@ -7,11 +7,13 @@ THESE ARE THE PRESET I CURRENTLY USE FOR CUSTOM PACKAGE TYPES ::::::::::::::::::
 
 Preset Package Names:
 
-Small Package
-Medium Package
-Large Package
-1 Extra Large Package
-2 Extra Small Package
+1Gildan Small
+2Gildan Large
+Duotec
+Hanes
+Large Package - Fruit of the Loom
+Medium Package - Fruit of the Loom
+Small Package - Fruit of the Loom
 
 
 ------------------------------------------------------------------------------------------
@@ -30,7 +32,7 @@ This program and its creator, and company thereof are in no way affiliated with 
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+    along with UPS Package Dimension Selector.  If not, see <http://www.gnu.org/licenses/>.
 
 
 -----------------------------------------------------------------------------------------
