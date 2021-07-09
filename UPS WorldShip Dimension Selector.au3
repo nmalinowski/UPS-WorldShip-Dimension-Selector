@@ -3,21 +3,18 @@
 #AutoIt3Wrapper_UseUpx=y
 #AutoIt3Wrapper_Compile_Both=y
 #AutoIt3Wrapper_UseX64=y
-#AutoIt3Wrapper_Res_Comment=Will Enterprises, Inc (C) 2015
 #AutoIt3Wrapper_Res_Description=UPS WorldShip Dimension Selector
 #AutoIt3Wrapper_Res_Fileversion=1.7.19.62
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_ProductVersion=1.7
-#AutoIt3Wrapper_Res_LegalCopyright=Nathaniel A. Malinowski (C) 2015
+#AutoIt3Wrapper_Res_LegalCopyright=Nathaniel A. Malinowski (C) 2021
 #AutoIt3Wrapper_Res_Language=1033
 #AutoIt3Wrapper_Run_Tidy=y
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #cs -------------------------------------------------------------------------------------------
 
 	UPS WorldShip Dimension Selector
-	(C) 2015 - Nathaniel A. Malinowski - Le GeeX, LLC - http://www.legeex.com
-	System/Network Adminstrator - Will Enterprises, Inc - http://www.willpromo.com
-
+	(C) 2021 - Nathaniel A. Malinowski
 
 #ce -------------------------------------------------------------------------------------------
 ; Script Start
@@ -77,7 +74,7 @@ Func _myAbout($iParent = 0)
 	Local $Image1 = GUICtrlCreatePic("logo.bmp", 16, 24, 105, 97)
 	Local $Label1 = GUICtrlCreateLabel("UPS WorldShip Dimension Selector", 136, 24, 170, 17)
 	Local $Label2 = GUICtrlCreateLabel("1.7.19.61", 136, 48, 55, 17)
-	Local $Label4 = GUICtrlCreateLabel("UPS WorldShip® is a trademark of United Parcel Service of America, Inc ", 16, 160, 249, 14)
+	Local $Label4 = GUICtrlCreateLabel("UPS WorldShipÂ® is a trademark of United Parcel Service of America, Inc ", 16, 160, 249, 14)
 	GUICtrlSetFont(-1, 6, 400, 0, "Arial")
 	Local $Label3 = GUICtrlCreateLabel("Nathaniel A. Malinowski (C) 2015", 16, 136, 160, 17)
 	Local $Label5 = GUICtrlCreateLabel("All rights reserved.", 16, 176, 68, 14)
