@@ -1,6 +1,6 @@
 UPS Package Dimension Selector;
 Source code is heavily commented to explain what is going on and what needs to be done to change it to work for you/your company.
-If you have any questions or need help please feel free to email me at nmalinowski[at]legeex.com
+If you have any questions or need help please feel free to ask.
 
 
 THESE ARE THE PRESET I CURRENTLY USE FOR CUSTOM PACKAGE TYPES :::::::::::::::::::::::::::::
@@ -17,7 +17,7 @@ Small Package - Fruit of the Loom
 
 
 ------------------------------------------------------------------------------------------
-UPS WorldShip® is a registered trademark of United Parcel Service of America, Inc. All Rights Reserved.
+UPS WorldShipÂ® is a registered trademark of United Parcel Service of America, Inc. All Rights Reserved.
 This program and its creator, and company thereof are in no way affiliated with United Parcel Service of America, Inc.
 
 
